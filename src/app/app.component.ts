@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {state, style, trigger} from '@angular/animations';
+import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +11,13 @@ import {state, style, trigger} from '@angular/animations';
         'backgroundColor': 'red',
         transform: 'translateX(0)'
       })),
-      state('highlight', style({
+      state('highlighted', style({
         'backgroundColor': 'blue',
         transform: 'translate(100px)'
-      }))
+      })),
+      transition('normal => highlighted', animate(300)),
+      transition('highlighted => normal', animate(800))
+
     ])
   ]
 })
@@ -31,7 +34,7 @@ export class AppComponent {
   }
 
   onAnimation() {
-    this.state == 'normal' ? this.state = 'highlight' : this.state = 'normal';
+    this.state === 'normal' ? this.state = 'highlighted' : this.state = 'normal';
   }
 
   onShink() {
