@@ -8,11 +8,11 @@ import {state, style, trigger} from '@angular/animations';
   animations: [
     trigger('divState', [
       state('normal', style({
-        backgroundColor: 'red',
+        'backgroundColor': 'red',
         transform: 'translateX(0)'
       })),
       state('highlight', style({
-        backgroundColor: 'blue',
+        'backgroundColor': 'blue',
         transform: 'translate(100px)'
       }))
     ])
@@ -31,7 +31,7 @@ export class AppComponent {
   }
 
   onAnimation() {
-
+    this.state == 'normal' ? this.state = 'highlight' : this.state = 'normal';
   }
 
   onShink() {
