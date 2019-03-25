@@ -34,7 +34,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
       })),
       transition('normal => highlighted', animate(300)),
       transition('highlighted => normal', animate(800)),
-      transition('shrunken <=> *',[
+      transition('shrunken <=> *', [
         style({
           'background-color': 'orange'
         }),
@@ -43,10 +43,22 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
         })),
         animate(500)
       ])
-    ])
-
+    ]),
+    trigger('list1', [
+      state('in', style({
+        opacity: 1,
+        transform: 'translateX(0)'
+      })),
+      transition('* => void', [
+        animate(300, style({
+          transform: 'translateX(100px)',
+          opacity: 0
+        }))
+      ]),
+    ]),
   ]
 })
+
 export class AppComponent {
   state = 'normal';
   wildState = 'normal';
@@ -66,6 +78,6 @@ export class AppComponent {
   }
 
   onShink() {
-     this.wildState = 'shrunken';
+    this.wildState = 'shrunken';
   }
 }

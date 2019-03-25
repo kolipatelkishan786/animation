@@ -26,6 +26,7 @@
         <li class="list-group-item"
             style="cursor: pointer"
             (click)="onDelete(item)"
+            [@list1]
             *ngFor="let item of list">
           {{item}}
         </li>
