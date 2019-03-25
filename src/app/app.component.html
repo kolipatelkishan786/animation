@@ -5,10 +5,15 @@
       <button class="btn btn-primary" (click)="onAnimation()">Animate!</button>&nbsp;
       <button class="btn btn-primary" (click)="onShink()">Shrink!</button>
       <hr>
-        <div
+      <div
         style="width: 100px; height: 100px;"
         [@divState]="state">
-        </div>
+      </div>
+      <br>
+      <div
+        style="width: 100px; height: 100px;"
+        [@wildState]="wildState">
+      </div>
     </div>
   </div>
   <hr>
