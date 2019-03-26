@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {FormsModule} from '@angular/forms';
-import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -12,9 +12,7 @@ import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-b
   imports: [
     BrowserModule,
     FormsModule,
-    BrowserAnimationsModule,
-    NoopAnimationsModule,
-
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
